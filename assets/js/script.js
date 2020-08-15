@@ -1,7 +1,6 @@
 const root = document.documentElement;
 
 const setLightTheme = () => {
-    console.log('setting light theme');
     root.style.setProperty('--bgcolor', 'white');
     root.style.setProperty('--textcolor', '#212121');
     root.style.setProperty('--border-color', '#212121');
@@ -11,11 +10,9 @@ const setLightTheme = () => {
 };
 
 const setDarkTheme = () => {
-    console.log('setting dark theme');
     root.style.setProperty('--bgcolor', '#212121');
     root.style.setProperty('--textcolor', 'white');
     root.style.setProperty('--border-color', 'white');
-
     moon.style.color = 'yellow';
     sun.style.color = '#ccc';
     localStorage.setItem('darktheme', 1);
@@ -23,7 +20,6 @@ const setDarkTheme = () => {
 
 document.querySelector('.slider').addEventListener('click', () => {
     darkTheme = localStorage.getItem('darktheme');
-    console.log({ darkTheme });
     if (darkTheme === '0') {
         setDarkTheme();
     } else {
@@ -33,9 +29,7 @@ document.querySelector('.slider').addEventListener('click', () => {
 
 (() => {
     let darkTheme = localStorage.getItem('darktheme');
-    console.log({ darkTheme });
     if (darkTheme === '1') {
-        console.dir(document.querySelector('#theme-switch'));
         document.querySelector('#theme-switch').checked = true;
         moon.style.color = 'yellow';
         sun.style.color = '#ccc';
@@ -56,7 +50,17 @@ window.onload = function () {
             event.preventDefault();
             // generate the contact number value
             this.contact_number.value = (Math.random() * 100000) | 0;
-            emailjs.sendForm('gmail', 'contact_form', this);
+            emailjs.sendForm('gmail', 'contact_form', this).then(
+                function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Bericht is verzonden.');
+                    document.getElementById('contact-form').reset();
+                },
+                function (error) {
+                    console.log('FAILED...', error);
+                    alert('Verzenden mislukt.');
+                }
+            );
         });
 };
 
@@ -87,7 +91,6 @@ window.onload = function () {
             `.form-input[name="${label.htmlFor}"]`
         );
         inputField.addEventListener('change', (event) => {
-            console.dir(event);
             event.target.value.length !== 0
                 ? label.classList.add('shrink')
                 : label.classList.remove('shrink');
