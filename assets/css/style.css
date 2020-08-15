@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700&display=swap');
+
+:root {
+    --textcolor: white;
+    --bgcolor: #212121;
+    --border-color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    background-color: #095ae4;
+    width: 150px;
+    height: 35px;
+    color: white;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #0c48b0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--textcolor);
+    background-color: var(--bgcolor);
+    margin: 0;
+    padding: 0;
+    transition: 0.3s all;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+}
+
+main {
+    margin: auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
+footer {
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ----------------------- TOGGLE SWITCH ----------------------------- */
+/* from w3schools.com */
+/* The switch - the box around the slider */
+
+#sun {
+    color: yellow;
+    cursor: pointer;
+}
+
+#moon {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.3s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+}
+
+/* CONTACT FORM */
+form {
+    margin: auto;
+    margin-top: 40px;
+}
+.form-group {
+    position: relative;
+    margin: 45px 0;
+}
+
+.form-group:focus-within label {
+    top: -14px;
+    font-size: 12px;
+}
+
+.form-group:focus-within .form-input {
+    outline: none;
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-color);
+}
+
+.form-input {
+    background: none;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid darkgrey;
+    margin: 25px 0;
+    resize: none;
+    color: var(--textcolor);
+    transition: 0.3s all;
+}
+.form-label {
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+}
+
+.shrink {
+    top: -14px;
+    font-size: 12px;
+}

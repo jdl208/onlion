@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>onLion Web Development</title>
+</head>
+
+<body class="dark">
+    <header>
+        <nav class="navbar">
+            <div>onLion Web Development</div>
+            <div>
+                <span id="sun">☀</span>
+                <label class="switch">
+                    <input id="theme-switch" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span id="moon">☾</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h3>Hier komt de website van onLion Web Development</h3>
+        <div>Bent u op zoek naar een nieuwe website of wilt u een online applicatie ontwikkelen? Vul dan gerust
+            onderstaand formulier in en dan neem ik zo spoedig mogelijk contact op.</div>
+        <!-- CONTACT FORM -->
+        <form id="contact-form">
+            <fieldset>
+                <legend>CONTACT FORMULIER</legend>
+                <input type="hidden" name="contact_number">
+                <div class="form-group">
+                    <label class="form-label dark" for="from_name">Naam</label>
+                    <input class="form-input" type="text" name="from_name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label dark" for="from_email">Uw email</label>
+                    <input class="form-input" type="email" name="from_email" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label dark" for="subject">Onderwerp</label>
+                    <input class="form-input" type="text" name="subject">
+                </div>
+                <div class="form-group">
+                    <label class="form-label dark" for="message">Bericht</label>
+                    <textarea class="form-input" name="message" rows="1" data-autoresize required></textarea>
+                </div>
+                <div>
+                    <input class="btn" type="submit" value="Verstuur">
+                </div>
+            </fieldset>
+        </form>
+
+    </main>
+    <footer></footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
